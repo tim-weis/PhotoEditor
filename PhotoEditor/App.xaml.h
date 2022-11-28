@@ -10,10 +10,14 @@ namespace winrt::PhotoEditor::implementation
     struct App : AppT<App>
     {
         App();
+        Microsoft::UI::Xaml::Controls::Frame CreateRootFrame();
 
         void OnLaunched(Microsoft::UI::Xaml::LaunchActivatedEventArgs const&);
+        static winrt::Microsoft::UI::Xaml::Window Window() { return window; };
+        void OnNavigationFailed(IInspectable const&, Microsoft::UI::Xaml::Navigation::NavigationFailedEventArgs const&);
 
     private:
-        winrt::Microsoft::UI::Xaml::Window window{ nullptr };
+        static winrt::Microsoft::UI::Xaml::Window window;
+        //winrt::Microsoft::UI::Xaml::Window window{ nullptr };
     };
 }
