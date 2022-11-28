@@ -44,10 +44,10 @@ namespace winrt::PhotoEditor::implementation
         }
 
         // Gets the thumbnail of current image file (m_imageFile).
-        Windows::Foundation::IAsyncOperation<Microsoft::UI::Xaml::Media::Imaging::BitmapImage> GetImageThumbnailAsync() const;
+        Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Media::Imaging::BitmapImage> GetImageThumbnailAsync() const;
 
         // Gets the full image of the current image file (m_imageFile).
-        Windows::Foundation::IAsyncOperation<Microsoft::UI::Xaml::Media::Imaging::BitmapImage> GetImageSourceAsync() const;
+        Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Media::Imaging::BitmapImage> GetImageSourceAsync() const;
 
         // File and information properties.
         Windows::Storage::StorageFile ImageFile() const
@@ -158,7 +158,7 @@ namespace winrt::PhotoEditor::implementation
         }
 
         // Property changed notifications.
-        event_token PropertyChanged(Microsoft::UI::Xaml::Data::PropertyChangedEventHandler const& value)
+        event_token PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& value)
         {
             return m_propertyChanged.add(value);
         }
@@ -189,7 +189,7 @@ namespace winrt::PhotoEditor::implementation
         double m_size{ 250 };
 
         // Property changed notification.
-        event<Microsoft::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
+        event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
 
         template <class T>
         void UpdateValue(hstring const& propertyName, T & var, T value)
@@ -203,7 +203,7 @@ namespace winrt::PhotoEditor::implementation
 
         void RaisePropertyChanged(hstring const& propertyName)
         {
-            m_propertyChanged(*this, Microsoft::UI::Xaml::Data::PropertyChangedEventArgs(propertyName));
+            m_propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs(propertyName));
         }
     };
 }

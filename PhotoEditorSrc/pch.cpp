@@ -1,4 +1,4 @@
-//  ---------------------------------------------------------------------------------
+﻿//  ---------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All rights reserved.
 // 
 //  The MIT License (MIT)
@@ -22,24 +22,4 @@
 //  THE SOFTWARE
 //  ---------------------------------------------------------------------------------
 
-namespace PhotoEditor
-{
-    runtimeclass Photo : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
-    {
-        Photo();
-        Photo(Windows.Storage.FileProperties.ImageProperties props, Windows.Storage.StorageFile imageFile, String name, String type);
-        Windows.Storage.StorageFile ImageFile{ get; };
-        Windows.Storage.FileProperties.ImageProperties ImageProperties{ get; };
-        String ImageName{ get; };
-        String ImageFileType{ get; };
-        String ImageDimensions{ get; };
-        String ImageTitle;
-        Single Exposure;
-        Single Temperature;
-        Single Tint;
-        Single Contrast;
-        Single Saturation;
-        Single BlurAmount;
-        Single Intensity;
-    }
-}
+#include "pch.h"

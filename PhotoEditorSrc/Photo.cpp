@@ -24,15 +24,14 @@
 
 #include "pch.h"
 #include "Photo.h"
-#include "Photo.g.cpp"
 #include <sstream>
 
 using namespace winrt;
 using namespace std;
-using namespace Microsoft::UI::Xaml;
+using namespace Windows::UI::Xaml;
 using namespace Windows::Storage;
 using namespace Windows::Foundation;
-using namespace Microsoft::UI::Xaml::Media::Imaging;
+using namespace Windows::UI::Xaml::Media::Imaging;
 using namespace Windows::Storage::Streams;
 
 namespace winrt::PhotoEditor::implementation

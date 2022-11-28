@@ -24,7 +24,7 @@
 
 namespace PhotoEditor
 {
-    runtimeclass Photo : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
+    runtimeclass Photo : Windows.UI.Xaml.Data.INotifyPropertyChanged
     {
         Photo();
         Photo(Windows.Storage.FileProperties.ImageProperties props, Windows.Storage.StorageFile imageFile, String name, String type);

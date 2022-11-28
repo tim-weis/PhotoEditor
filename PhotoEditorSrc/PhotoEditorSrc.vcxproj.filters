@@ -4,20 +4,33 @@
     <ApplicationDefinition Include="App.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MainWindow.xaml" />
+    <Page Include="DetailPage.xaml">
+      <Filter>Views</Filter>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Filter>Views</Filter>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl" />
-    <Midl Include="MainWindow.idl" />
-    <Midl Include="Photo.idl" />
+    <Midl Include="MainPage.idl" />
+    <Midl Include="DetailPage.idl" />
+    <Midl Include="Photo.idl">
+      <Filter>Models</Filter>
+    </Midl>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="MainPage.cpp" />
+    <ClCompile Include="DetailPage.cpp" />
     <ClCompile Include="Photo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="App.h" />
+    <ClInclude Include="MainPage.h" />
+    <ClInclude Include="DetailPage.h" />
     <ClInclude Include="Photo.h" />
   </ItemGroup>
   <ItemGroup>
@@ -47,20 +60,23 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Assets">
-      <UniqueIdentifier>{5bd6dffc-4ffe-4d4c-b60c-76f3d830b65d}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Manifest Include="app.manifest" />
-  </ItemGroup>
-  <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\CONTRIBUTING.md" />
+    <None Include="..\LICENSE.md" />
+    <None Include="..\README.md" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{e48dc53e-40b1-40cb-970a-f89935452892}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{d2d82ac2-f140-4cc1-81a6-0c9d62482085}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views">
+      <UniqueIdentifier>{3bbb5a26-09fb-4f10-ad8e-92f739beaf01}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
