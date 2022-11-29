@@ -2,6 +2,11 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 #pragma once
+
+// This is required because we are using std::min and std::max, otherwise 
+// we have a collision with min and max macros being defined elsewhere.
+#define NOMINMAX
+
 #include <windows.h>
 #include <unknwn.h>
 #include <restrictederrorinfo.h>
@@ -31,3 +36,11 @@
 #include <winrt/Windows.Storage.h>
 #include <winrt/Windows.Storage.FileProperties.h>
 #include <winrt/Windows.Storage.Streams.h>
+
+#include <winrt/Windows.Graphics.Effects.h>
+#include <winrt/Microsoft.Graphics.Canvas.Effects.h>
+#include <winrt/Microsoft.Graphics.Canvas.UI.Xaml.h>
+#include <winrt/Microsoft.UI.Composition.h>
+#include <winrt/Microsoft.UI.Xaml.Input.h>
+#include <winrt/Windows.Graphics.Imaging.h>
+#include <winrt/Windows.Storage.Pickers.h>

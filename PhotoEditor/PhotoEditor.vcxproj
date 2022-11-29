@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
+    <Page Include="DetailPage.xaml" />
     <Page Include="MainWindow.xaml" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +141,9 @@
     <Midl Include="App.idl">
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
+    </Midl>
+    <Midl Include="DetailPage.idl">
+      <DependentUpon>DetailPage.xaml</DependentUpon>
     </Midl>
     <Midl Include="MainWindow.idl">
       <SubType>Code</SubType>
