@@ -87,7 +87,7 @@ namespace winrt::PhotoEditor::implementation
         }
 
         // Event handler for navigation to DetailPage view.
-        Windows::Foundation::IAsyncAction OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs);
+        Windows::Foundation::IAsyncAction OnNavigatedTo(MIcrosoft::UI::Xaml::Navigation::NavigationEventArgs);
 
         // Prepares animation for navigation back to MainPage view.
         void OnNavigatingFrom(Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs const&);
@@ -133,7 +133,7 @@ namespace winrt::PhotoEditor::implementation
         event_revoker<Windows::UI::Xaml::Data::INotifyPropertyChanged> m_propertyChangedToken;
 
         // Field to store page Compositor for creation of types in the Windows.UI.Composition namespace.
-        Windows::UI::Composition::Compositor m_compositor{ nullptr };
+        Microsoft::UI::Composition::Compositor m_compositor{ nullptr };
 
         // Fields for image effects, animation registration, and collection for effects graph.
         Microsoft::Graphics::Canvas::Effects::ContrastEffect m_contrastEffect{};
@@ -145,7 +145,7 @@ namespace winrt::PhotoEditor::implementation
         Microsoft::Graphics::Canvas::Effects::GrayscaleEffect m_grayscaleEffect{};
         Microsoft::Graphics::Canvas::Effects::InvertEffect m_invertEffect{};
         Microsoft::Graphics::Canvas::Effects::CompositeEffect m_graphicsEffect{};
-        Windows::UI::Composition::CompositionEffectBrush m_combinedBrush{ nullptr };
+        Microsoft::UI::Composition::CompositionEffectBrush m_combinedBrush{ nullptr };
 
         std::vector<Windows::Foundation::IInspectable> m_selectedEffectsTemp{};
         std::vector<hstring> m_animatablePropertiesList{};

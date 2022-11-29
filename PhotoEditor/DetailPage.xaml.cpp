@@ -23,7 +23,9 @@
 //  ---------------------------------------------------------------------------------
 
 #include "pch.h"
-#include "DetailPage.h"
+#include "DetailPage.xaml.h"
+#include "DetailPage.g.cpp"
+#include "App.xaml.h"
 #include "Photo.h"
 
 using namespace winrt;
@@ -41,14 +43,14 @@ using namespace Windows::Storage::Search;
 using namespace Windows::Storage::Streams;
 using namespace Windows::Storage::Pickers;
 using namespace Windows::UI;
-using namespace Windows::UI::Composition;
-using namespace Windows::UI::Xaml;
-using namespace Windows::UI::Xaml::Controls;
-using namespace Windows::UI::Xaml::Hosting;
-using namespace Windows::UI::Xaml::Input;
-using namespace Windows::UI::Xaml::Media::Imaging;
-using namespace Windows::UI::Xaml::Media::Animation;
-using namespace Windows::UI::Xaml::Navigation;
+using namespace Microsoft::UI::Composition;
+using namespace MIcrosoft::UI::Xaml;
+using namespace MIcrosoft::UI::Xaml::Controls;
+using namespace MIcrosoft::UI::Xaml::Hosting;
+using namespace MIcrosoft::UI::Xaml::Input;
+using namespace MIcrosoft::UI::Xaml::Media::Imaging;
+using namespace MIcrosoft::UI::Xaml::Media::Animation;
+using namespace MIcrosoft::UI::Xaml::Navigation;
 
 namespace winrt::PhotoEditor::implementation
 {
