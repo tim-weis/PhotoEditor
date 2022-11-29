@@ -35,13 +35,13 @@ using namespace Windows::Storage;
 using namespace Windows::Storage::Search;
 using namespace Windows::Storage::Streams;
 using namespace Microsoft::UI::Composition;
-using namespace MIcrosoft::UI::Xaml::Navigation;
-using namespace MIcrosoft::UI::Xaml;
-using namespace MIcrosoft::UI::Xaml::Controls;
-using namespace MIcrosoft::UI::Xaml::Data;
-using namespace MIcrosoft::UI::Xaml::Hosting;
-using namespace MIcrosoft::UI::Xaml::Media::Animation;
-using namespace MIcrosoft::UI::Xaml::Media::Imaging;
+using namespace Microsoft::UI::Xaml::Navigation;
+using namespace Microsoft::UI::Xaml;
+using namespace Microsoft::UI::Xaml::Controls;
+using namespace Microsoft::UI::Xaml::Data;
+using namespace Microsoft::UI::Xaml::Hosting;
+using namespace Microsoft::UI::Xaml::Media::Animation;
+using namespace Microsoft::UI::Xaml::Media::Imaging;
 
 namespace winrt::PhotoEditor::implementation
 {
@@ -100,7 +100,7 @@ namespace winrt::PhotoEditor::implementation
             image.Opacity(100);
 
             auto item = unbox_value<PhotoEditor::Photo>(args.Item());
-            Photo* impleType = from_abi<Photo>(item);
+            Photo* impleType = get_self<Photo>(item);
 
             try
             {
@@ -150,8 +150,8 @@ namespace winrt::PhotoEditor::implementation
     IAsyncAction MainPage::GetItemsAsync()
     {
         // Show the loading progress bar.
-        LoadProgressIndicator().Visibility(MIcrosoft::UI::Xaml::Visibility::Visible);
-        NoPicsText().Visibility(MIcrosoft::UI::Xaml::Visibility::Collapsed);
+        LoadProgressIndicator().Visibility(Microsoft::UI::Xaml::Visibility::Visible);
+        NoPicsText().Visibility(Microsoft::UI::Xaml::Visibility::Collapsed);
 
         // File type filter.
         QueryOptions options{};
@@ -185,11 +185,11 @@ namespace winrt::PhotoEditor::implementation
         if (Photos().Size() == 0)
         {
             // No pictures were found in the library, so show message.
-            NoPicsText().Visibility(MIcrosoft::UI::Xaml::Visibility::Visible);
+            NoPicsText().Visibility(Microsoft::UI::Xaml::Visibility::Visible);
         }
 
         // Hide the loading progress bar.
-        LoadProgressIndicator().Visibility(MIcrosoft::UI::Xaml::Visibility::Collapsed);
+        LoadProgressIndicator().Visibility(Microsoft::UI::Xaml::Visibility::Collapsed);
 
         if (unsupportedFilesFound)
         {

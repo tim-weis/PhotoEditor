@@ -24,6 +24,7 @@
 
 #pragma once
 #include "DetailPage.g.h"
+#include <winrt/Microsoft.Graphics.Canvas.Effects.h>
 #include <variant>
 
 namespace winrt::PhotoEditor::implementation
@@ -87,24 +88,24 @@ namespace winrt::PhotoEditor::implementation
         }
 
         // Event handler for navigation to DetailPage view.
-        Windows::Foundation::IAsyncAction OnNavigatedTo(MIcrosoft::UI::Xaml::Navigation::NavigationEventArgs);
+        Windows::Foundation::IAsyncAction OnNavigatedTo(Microsoft::UI::Xaml::Navigation::NavigationEventArgs);
 
         // Prepares animation for navigation back to MainPage view.
-        void OnNavigatingFrom(Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs const&);
+        void OnNavigatingFrom(Microsoft::UI::Xaml::Navigation::NavigatingCancelEventArgs const&);
 
         // Event handlers
-        void BackButton_ItemClick(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-        void ZoomSlider_ValueChanged(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::Controls::Primitives::RangeBaseValueChangedEventArgs const&);
-        void MainImageScroller_ViewChanged(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::Controls::ScrollViewerViewChangedEventArgs const&);
-        void Effects_SelectionChanged(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::Controls::SelectionChangedEventArgs const&);
-        void EditButton_Check(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-        void EditButton_Uncheck(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-        void TextBlock_Tapped(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::Input::TappedRoutedEventArgs const&);
-        void RemoveAllEffectsButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-        Windows::Foundation::IAsyncAction SaveButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-        void SelectEffectsButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-        void ApplyEffectsButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-        void CancelEffectsButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+        void BackButton_ItemClick(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        void ZoomSlider_ValueChanged(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::Controls::Primitives::RangeBaseValueChangedEventArgs const&);
+        void MainImageScroller_ViewChanged(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::Controls::ScrollViewerViewChangedEventArgs const&);
+        void Effects_SelectionChanged(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::Controls::SelectionChangedEventArgs const&);
+        void EditButton_Check(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        void EditButton_Uncheck(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        void TextBlock_Tapped(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::Input::TappedRoutedEventArgs const&);
+        void RemoveAllEffectsButton_Click(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        Windows::Foundation::IAsyncAction SaveButton_Click(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        void SelectEffectsButton_Click(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        void ApplyEffectsButton_Click(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
+        void CancelEffectsButton_Click(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
 
     private:
         // Initializes all image effects.
@@ -112,7 +113,7 @@ namespace winrt::PhotoEditor::implementation
 
         // Generate preview of effects for effect selection UI.
         void InitializeEffectPreviews();
-        Windows::Foundation::IAsyncAction InitializeEffectPreview(Windows::Foundation::IInspectable, Windows::UI::Xaml::Controls::Image);
+        Windows::Foundation::IAsyncAction InitializeEffectPreview(Windows::Foundation::IInspectable, Microsoft::UI::Xaml::Controls::Image);
 
         // Creates the effects graph based on the selected effects.
         void CreateEffectsGraph();
@@ -130,7 +131,7 @@ namespace winrt::PhotoEditor::implementation
         // Indicates whether the effects controls are shown.
         bool m_showControls = false;
 
-        event_revoker<Windows::UI::Xaml::Data::INotifyPropertyChanged> m_propertyChangedToken;
+        event_revoker<Microsoft::UI::Xaml::Data::INotifyPropertyChanged> m_propertyChangedToken;
 
         // Field to store page Compositor for creation of types in the Windows.UI.Composition namespace.
         Microsoft::UI::Composition::Compositor m_compositor{ nullptr };
@@ -163,7 +164,7 @@ namespace winrt::PhotoEditor::implementation
             Microsoft::Graphics::Canvas::Effects::CompositeEffect>> m_effectsList{};
 
         // Photo image
-        Windows::UI::Xaml::Media::Imaging::BitmapImage m_imageSource{ nullptr };
+        Microsoft::UI::Xaml::Media::Imaging::BitmapImage m_imageSource{ nullptr };
 
      };
 }

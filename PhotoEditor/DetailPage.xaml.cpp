@@ -44,13 +44,13 @@ using namespace Windows::Storage::Streams;
 using namespace Windows::Storage::Pickers;
 using namespace Windows::UI;
 using namespace Microsoft::UI::Composition;
-using namespace MIcrosoft::UI::Xaml;
-using namespace MIcrosoft::UI::Xaml::Controls;
-using namespace MIcrosoft::UI::Xaml::Hosting;
-using namespace MIcrosoft::UI::Xaml::Input;
-using namespace MIcrosoft::UI::Xaml::Media::Imaging;
-using namespace MIcrosoft::UI::Xaml::Media::Animation;
-using namespace MIcrosoft::UI::Xaml::Navigation;
+using namespace Microsoft::UI::Xaml;
+using namespace Microsoft::UI::Xaml::Controls;
+using namespace Microsoft::UI::Xaml::Hosting;
+using namespace Microsoft::UI::Xaml::Input;
+using namespace Microsoft::UI::Xaml::Media::Imaging;
+using namespace Microsoft::UI::Xaml::Media::Animation;
+using namespace Microsoft::UI::Xaml::Navigation;
 
 namespace winrt::PhotoEditor::implementation
 {
@@ -300,7 +300,7 @@ namespace winrt::PhotoEditor::implementation
 
         if (auto item = Item())
         {
-            Photo* impleType = from_abi<Photo>(item);
+            Photo* impleType = get_self<Photo>(item);
             m_imageSource = co_await impleType->GetImageSourceAsync();
 
             // Because DetailPage can be destroyed during the life of the event handler, 
@@ -414,7 +414,7 @@ namespace winrt::PhotoEditor::implementation
     // Creates a specified effect thumbnail for the effect preview UI.
     IAsyncAction DetailPage::InitializeEffectPreview(IInspectable compEffect, Image image)
     {
-        Photo* implType = from_abi<Photo>(Item());
+        Photo* implType = get_self<Photo>(Item());
         image.Source(co_await implType->GetImageThumbnailAsync());
         image.InvalidateArrange();
 

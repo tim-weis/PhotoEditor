@@ -38,18 +38,18 @@ namespace winrt::PhotoEditor::implementation
         }
 
         // Event handlers for loading and rendering images.
-        Windows::Foundation::IAsyncAction OnNavigatedTo(MIcrosoft::UI::Xaml::Navigation::NavigationEventArgs);
-        Windows::Foundation::IAsyncAction OnContainerContentChanging(MIcrosoft::UI::Xaml::Controls::ListViewBase, MIcrosoft::UI::Xaml::Controls::ContainerContentChangingEventArgs);
+        Windows::Foundation::IAsyncAction OnNavigatedTo(Microsoft::UI::Xaml::Navigation::NavigationEventArgs);
+        Windows::Foundation::IAsyncAction OnContainerContentChanging(Microsoft::UI::Xaml::Controls::ListViewBase, Microsoft::UI::Xaml::Controls::ContainerContentChangingEventArgs);
 
         // Animation for navigation back from DetailPage view.
         Windows::Foundation::IAsyncAction StartConnectedAnimationForBackNavigation();
 
         // Property changed notifications.
-        event_token PropertyChanged(MIcrosoft::UI::Xaml::Data::PropertyChangedEventHandler const&);
+        event_token PropertyChanged(Microsoft::UI::Xaml::Data::PropertyChangedEventHandler const&);
         void PropertyChanged(event_token const&);
 
         // Event handler.
-        void ImageGridView_ItemClick(Windows::Foundation::IInspectable const, MIcrosoft::UI::Xaml::Controls::ItemClickEventArgs const);
+        void ImageGridView_ItemClick(Windows::Foundation::IInspectable const, Microsoft::UI::Xaml::Controls::ItemClickEventArgs const);
 
     private:
         // Functions for image loading and animation.
@@ -70,11 +70,11 @@ namespace winrt::PhotoEditor::implementation
         Microsoft::UI::Composition::Compositor m_compositor{ nullptr };
 
         // Event
-        event<Windows::Foundation::TypedEventHandler<MIcrosoft::UI::Xaml::Controls::ListViewBase, MIcrosoft::UI::Xaml::Controls::ContainerContentChangingEventArgs>> m_handler;
+        event<Windows::Foundation::TypedEventHandler<Microsoft::UI::Xaml::Controls::ListViewBase, Microsoft::UI::Xaml::Controls::ContainerContentChangingEventArgs>> m_handler;
 
         // Property changed notifications.
         void RaisePropertyChanged(hstring const&);
-        event<MIcrosoft::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
+        event<Microsoft::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
 
     };
 }

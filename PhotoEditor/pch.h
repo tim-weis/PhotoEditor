@@ -39,7 +39,7 @@
 
 #include <winrt/Windows.Graphics.Effects.h>
 //#include <winrt/Microsoft.Graphics.Canvas.Effects.h>
-//#include <winrt/Microsoft.Graphics.Canvas.UI.Xaml.h>
+#include <winrt/Microsoft.Graphics.Canvas.UI.Xaml.h>
 #include <winrt/Microsoft.UI.Composition.h>
 #include <winrt/Microsoft.UI.Xaml.Input.h>
 #include <winrt/Windows.Graphics.Imaging.h>
